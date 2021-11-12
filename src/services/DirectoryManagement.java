@@ -83,7 +83,27 @@ public class DirectoryManagement implements Management<Directory> {
         }
         return false;
     }
-
+    public boolean booleanCheckReceiptById(int id) {
+        for (int i = 0; i < directoryList.size(); i++) {
+            if (directoryList.get(i).getId() == id) {
+                return true;
+            }
+        }
+        return false;
+    }
+    public int booleanCheckReceiptById2() {
+        Scanner scanner = new Scanner(System.in);
+        int id;
+        System.out.println("Enter receipt ID: ");
+        while (true) {
+            id = scanner.nextInt();
+            if (booleanCheckReceiptById(id) == false && id > 0) {
+                return id;
+            }
+            System.out.println("ID already exist. ");
+            System.out.println("Enter receipt ID: ");
+        }
+    }
     public Directory create() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter name. ");
@@ -95,7 +115,7 @@ public class DirectoryManagement implements Management<Directory> {
         System.out.println("Enter social network. ");
         String socialNetwork = scanner.nextLine();
         System.out.println("Enter id. ");
-        int id = scanner.nextInt();
+        int id = booleanCheckReceiptById2();
         return new Directory(id, name, numberPhone, email, socialNetwork);
     }
 }
