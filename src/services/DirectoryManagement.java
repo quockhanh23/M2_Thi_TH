@@ -94,14 +94,14 @@ public class DirectoryManagement implements Management<Directory> {
     public int booleanCheckReceiptById2() {
         Scanner scanner = new Scanner(System.in);
         int id;
-        System.out.println("Enter receipt ID: ");
+        System.out.println("Enter ID: ");
         while (true) {
             id = scanner.nextInt();
             if (booleanCheckReceiptById(id) == false && id > 0) {
                 return id;
             }
             System.out.println("ID already exist. ");
-            System.out.println("Enter receipt ID: ");
+            System.out.println("Enter ID: ");
         }
     }
     public Directory create() {
