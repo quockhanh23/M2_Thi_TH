@@ -89,9 +89,9 @@ public class DirectoryManagement implements Management<Directory> {
         System.out.println("Enter name. ");
         String name = scanner.nextLine();
         System.out.println("Enter number phone. ");
-        String numberPhone = scanner.nextLine();
+        String numberPhone = Format.inputPhoneNumber();
         System.out.println("Enter email. ");
-        String email = scanner.nextLine();
+        String email = Format.inputEmail();
         System.out.println("Enter social network. ");
         String socialNetwork = scanner.nextLine();
         System.out.println("Enter id. ");
