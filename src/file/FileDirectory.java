@@ -38,11 +38,9 @@ public class FileDirectory {
             String email = arr[3];
             String socialNetwork = arr[4];
             directoryManagement.add(new Directory(id, name, number, email, socialNetwork));
-            directoryManagement.print();
-            bufferedReader.close();
-            fileReader.close();
-
         }
+        directoryManagement.print();
+        bufferedReader.close();
         return null;
     }
 }
